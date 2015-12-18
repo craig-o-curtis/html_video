@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Video and Audio</title>
+    
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css' />
+    
+    <script src="mejs/jquery.js"></script>
+    <script src="mejs/mediaelement-and-player.min.js"></script>
+    <link rel="stylesheet" href="mejs/mediaelementplayer.min.css" />
+    
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="mejs/mejs-skins.css" />
+    <link rel="stylesheet" href="css/custom-skins.css" />
+    
+  </head>
+  <body>
+
+    <h1>HTML Video and Audio</h1>
+    <h2><a href="http://www.mediaelementjs.com" target="_blank">MediaElement.JS</a></h2>
+    
+    <div class="wrapper">
+      
+      <h2>Video Example</h2>
+      <div class="flex-container flex-center"> <!-- flex-container -->
+        <div class="flex-card">  <!-- flex-card -->
+          <h3 class="media-title">Default MediaElement.JS video</h3>
+          <!--<video class="" width="852px" height="480px" controls>-->
+          <video class="" width="100%" height="100%" controls>
+            <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.mp4" type="video/mp4">
+            <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.ogg" type="video/ogg">
+            <track label="English" kind="subtitles" srclang="en" src="bridge-captions.vtt" default>
+          </video>
+        </div> <!-- flex-card -->
+        
+        <div class="flex-card"> <!-- flex-card -->
+          <h3 class="media-title">MediaElement.js TED Skin</h3>
+          <!--<video class="" width="852px" height="480px" controls>-->
+          <video class="mejs-ted" width="100%" height="100%" controls>
+            <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.mp4" type="video/mp4">
+            <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.ogg" type="video/ogg">
+            <track label="English" kind="subtitles" srclang="en" src="bridge-captions.vtt" default>
+          </video>
+        </div> <!-- flex-card -->
+      </div> <!-- flex-container -->
+
+      <div class="flex-container flex-center"> <!-- flex-container -->
+        <div class="flex-card">  <!-- flex-card -->
+          <h3 class="media-title">MediaElement.JS WMP Skin</h3>
+          <!--<video class="" width="852px" height="480px" controls>-->
+          <video class="mejs-wmp" width="100%" height="100%" controls>
+            <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.mp4" type="video/mp4">
+            <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.ogg" type="video/ogg">
+            <track label="English" kind="subtitles" srclang="en" src="bridge-captions.vtt" default>
+          </video>
+        </div> <!-- flex-card -->
+        
+        <div class="flex-card"> <!-- flex-card -->
+          <h3 class="media-title">Custom MediaElement.js Style</h3>
+          <!--<video class="" width="852px" height="480px" controls>-->
+          <video class="custom-skins" width="100%" height="100%" controls>
+            <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.mp4" type="video/mp4">
+            <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.ogg" type="video/ogg">
+            <track label="English" kind="subtitles" srclang="en" src="bridge-captions.vtt" default>
+          </video>
+        </div> <!-- flex-card -->
+      </div> <!-- flex-container -->
+
+      <h2>Audio Example</h2>
+      <div class="flex-container flex-center"> <!-- flex -->
+        <div class="flex-card">  <!-- flex -->
+          <h3 class="media-title">Default MediaElement.JS audio</h3>
+          <audio class="" controls>
+            <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge-audio.mp3" type="audio/mp3">
+          </audio>
+        </div> <!-- flex-card -->
+          <div class="flex-card flex-center">  <!-- flex -->
+            <h3 class="media-title">MediaElement.js TED Skin</h3>
+            <audio class="mejs-ted" controls>
+              <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge-audio.mp3" type="audio/mp3">
+            </audio>
+        </div> <!-- flex-card -->
+      </div> <!-- flex-container -->
+
+      <div class="flex-container flex-center"> <!-- flex -->
+        <div class="flex-card">  <!-- flex -->
+          <h3 class="media-title">MediaElement.JS WMP Skin</h3>
+          <audio class="mejs-wmp" controls>
+            <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge-audio.mp3" type="audio/mp3">
+          </audio>
+        </div> <!-- flex-card -->
+          <div class="flex-card flex-center">  <!-- flex -->
+            <h3 class="media-title">Custom MediaElement.js Style</h3>
+            <audio class="custom-skins" controls>
+              <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge-audio.mp3" type="audio/mp3">
+            </audio>
+        </div> <!-- flex-card -->
+      </div> <!-- flex-container -->
+    </div>
+
+    <script>
+      $('audio, video').mediaelementplayer({
+        success: function(player, node) {
+          $('#' + node.id + '-mode').html('mode: ' + player.pluginType);
+        },
+        features: ['playpause', 'progress', 'current', 'duration', 'tracks', 'volume', 'fullscreen'],
+        startLanguage: 'en',
+        translationSelector: true,
+        // Hide controls when playing and mouse is not over the video
+        alwaysShowControls: false
+//        // force iPad's native controls
+//        iPadUseNativeControls: false,
+//        // force iPhone's native controls
+//        iPhoneUseNativeControls: false, 
+//        // force Android's native controls
+//        AndroidUseNativeControls: false,
+//        // turns keyboard support on and off for this instance
+//        enableKeyboard: true
+      });
+    </script>
+  </body>
+</html>
+
+
+

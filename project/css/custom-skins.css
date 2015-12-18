@@ -1,0 +1,166 @@
+.custom-skins .mejs-controls {
+  background: rgba(56,64,71,0.98);
+  height: 30px;
+  border-radius: 20px;
+}
+
+.mejs-container {
+  background: transparent; /* gets rid of boxy background */
+  background-color: transparent;
+  border-radius: 20px;
+}
+
+.custom-skins .mejs-controls .mejs-controls-playpause,
+.custom-skins .mejs-controls .mejs-controls-progress,
+.custom-skins .mejs-controls .mejs-controls-current,
+.custom-skins .mejs-controls .mejs-controls-duration,
+.custom-skins .mejs-controls .mejs-controls-tracks,
+.custom-skins .mejs-controls .mejs-controls-volume,
+.custom-skins .mejs-controls .mejs-controls-fullscreen {
+  color: green;
+  background: yellow;
+  height: 103px;
+}
+
+.custom-skins .mejs-controls .mejs-button button {
+  outline: none;
+}
+
+.custom-skins .mejs-controls .mejs-captions-button {
+  margin: 0 7px;
+}
+
+.custom-skins .mejs-controls .mejs-captions-selector {
+  /* not changed in controls because overriding default skin */
+  /* override more specific selector - selector specificity */
+  background: rgba(56,64,71,0.98);
+  width: 100px;
+  right: auto;
+}
+
+.custom-skins .mejs-controls .mejs-time-rail {
+/*  padding: 0;*/
+  transition: width 0.5s;
+/*  height: 12.5px;*/
+}
+
+.custom-skins .mejs-controls .mejs-time-rail span {
+  height: 100%;
+  border-radius: 10px;
+}
+
+.custom-skins .mejs-controls .mejs-time-rail .mejs-time-total {
+  transition: width 0.5s;
+  height: 20px;
+}
+
+
+.custom-skins .mejs-controls .mejs-time-rail .mejs-time-buffering,
+.custom-skins .mejs-horizontal-volume-slider .mejs-horizontal-volume-buffering {
+  background: linear-gradient(transparent, black);
+  transition: width 0.01s;
+}
+
+.custom-skins .mejs-controls .mejs-time-rail .mejs-time-loaded {
+  background: linear-gradient(darkgrey, black);
+  transition: width 0.5s;
+}
+
+.custom-skins .mejs-controls .mejs-time-rail .mejs-time-current,
+.custom-skins .mejs-horizontal-volume-slider .mejs-horizontal-volume-current {
+  background: linear-gradient(gold, goldenrod, darkgoldenrod 90%);
+  transition: width 0.25s;
+}
+
+
+.custom-skins .mejs-controls .mejs-time-rail .mejs-time-total,
+.custom-skins .mejs-controls .mejs-time-rail .mejs-time-loaded,
+.custom-skins .mejs-controls .mejs-time-rail .mejs-time-buffering,
+.custom-skins .mejs-controls .mejs-time-rail .mejs-time-handle {
+  margin: 0;
+}
+
+.custom-skins .mejs-controls .mejs-time-rail .mejs-time-total .mejs-time-float {
+  border: none;
+  background: none;
+  text-shadow: 0px 1px 3px rgba(0,0,0,0.8); 
+  font-family: Helvetical, Arial, sans;
+  font-size: 14px;
+  color: white;
+}
+
+/* volume control */
+.custom-skins .mejs-controls .mejs-volume-button .mejs-volume-slider {
+  border-radius: 50px;
+}
+
+.custom-skins .mejs-controls .mejs-volume-button .mejs-volume-slider .mejs-volume-total,
+.custom-skins .mejs-controls .mejs-volume-button .mejs-volume-slider .mejs-volume-current {
+  border-radius: 5px;
+  width: 10px;
+  left: 8px;
+}
+
+.custom-skins .mejs-controls .mejs-volume-button .mejs-volume-slider .mejs-volume-current {
+  background: goldenrod;
+  transition: top 0.25s, height 0.25s;
+}
+/* adjust above and below transition times to same for smooth effect */
+.custom-skins .mejs-controls .mejs-volume-button .mejs-volume-slider .mejs-volume-handle {
+  background: radial-gradient(circle, gold, darkgoldenrod);
+  width: 75%;
+  height: 20px;
+  border-radius: 100%;
+  transition: top 0.25s;
+}
+
+/* flexbox styles */
+.flex-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+
+/* SUPPORTING horizontally centers content */
+.flex-center {
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+
+.flex-card {
+	padding: .75rem;
+	margin-bottom: 2rem;
+	border: 0;
+	/* gives equal widths to flex-cards */
+	-webkit-box-flex: 1;
+	-webkit-flex-grow: 1;
+	    -ms-flex-positive: 1;
+	        flex-grow: 1;
+	-webkit-flex: 1;
+	/* makes all flex-cards have the same height */
+	-webkit-align-self: stretch;
+        -ms-flex-item-align: stretch;
+            align-self: stretch;
+}
+
+/* media queries */
+@media screen and (min-width: 1192px) {
+  .flex-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
